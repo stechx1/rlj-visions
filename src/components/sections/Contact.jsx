@@ -40,7 +40,6 @@ const Contact = ({
     bottomDivider && 'has-bottom-divider'
   );
 
-  const tilesClasses = classNames('tiles-wrap', pushLeft && 'push-left');
 
   const sectionHeader = {
     title: 'Contact Us',
