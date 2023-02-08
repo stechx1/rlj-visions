@@ -40,9 +40,20 @@ const Contact = ({
     bottomDivider && 'has-bottom-divider'
   );
 
-
   const sectionHeader = {
     title: 'Contact Us',
+  };
+
+  const contactStyles = {
+    container: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+    "@media (max-width: 767px)": {
+      container: {
+        flexDirection: 'column',
+      },
+    }
   };
 
   return (
@@ -50,14 +61,21 @@ const Contact = ({
       <div className='container'>
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className='center-content' />
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={contactStyles.container}
+          >
             <Image
               src={require('./../../assets/images/studio.jpeg')}
               alt='Features split 01'
               width={528}
               height={396}
             />
-            <div style={{ marginLeft: '60px', width: '100%' }}>
+            <div
+              style={{
+                marginLeft: '60px',
+                width: '100%',
+              }}
+            >
               <Input
                 type='text'
                 label='Name'
@@ -80,7 +98,7 @@ const Contact = ({
                 // hasIcon='right'
                 placeholder='Your message here.'
               ></Input>
-              <div style={{marginTop: "20px"}}>
+              <div style={{ marginTop: '20px' }}>
                 <Button tag={'a'} color='primary' wideMobile href='/'>
                   Submit
                 </Button>
