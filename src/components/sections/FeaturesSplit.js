@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
-import { services } from '../../data/HeroSection/HeroSection';
+import { services } from '../../data/HeroSection';
 
 const propTypes = {
   ...SectionSplitProps.types,
@@ -69,9 +69,7 @@ const FeaturesSplit = ({
                   {services[0].subheading}
                 </div>
                 <h3 className='mt-0 mb-12'>{services[0].heading}</h3>
-                <p className='m-0'>
-                  {services[0].para}
-                </p>
+                <p className='m-0'>{services[0].para}</p>
               </div>
               <div
                 className={classNames(
@@ -98,9 +96,7 @@ const FeaturesSplit = ({
                   {services[1].subheading}
                 </div>
                 <h3 className='mt-0 mb-12'>{services[1].heading}</h3>
-                <p className='m-0'>
-                  {services[1].para}
-                </p>
+                <p className='m-0'>{services[1].para}</p>
               </div>
               <div
                 className={classNames(

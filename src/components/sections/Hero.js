@@ -5,7 +5,7 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
-import { heroData } from '../../data/HeroSection/HeroSection';
+import { heroData } from '../../data/HeroSection';
 
 const propTypes = {
   ...SectionProps.types,
@@ -95,7 +95,7 @@ const Hero = ({
               </div>
             </div>
           </div>
-          <div
+          {/* <div
             className='hero-figure reveal-from-bottom illustration-element-01'
             data-reveal-value='20px'
             data-reveal-delay='800'
@@ -105,23 +105,23 @@ const Hero = ({
               href='#0'
               aria-controls='video-modal'
               onClick={openModal}
-            >
-              <Image
+            > */}
+              <Image style={{marginTop: "40px"}}
                 className='has-shadow'
-                src={require('./../../assets/images/video-placeholder.jpg')}
+                src={require('./../../assets/images/nature.jpeg')}
                 alt='Hero'
                 width={896}
                 height={504}
               />
-            </a>
-          </div>
-          <Modal
+            {/* </a>
+          </div> */}
+          {/* <Modal
             id='video-modal'
             show={videoModalActive}
             handleClose={closeModal}
             video='https://player.vimeo.com/video/174002812'
             videoTag='iframe'
-          />
+          /> */}
         </div>
       </div>
     </section>

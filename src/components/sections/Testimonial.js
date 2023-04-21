@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
-import { testimonials } from '../../data/HeroSection/HeroSection';
+import { testimonials } from '../../data/HeroSection';
 
 const propTypes = {
   ...SectionTilesProps.types,

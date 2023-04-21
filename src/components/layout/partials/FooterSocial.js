@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { socials } from '../../../data/HeroSection/HeroSection';
+import { socials } from '../../../data/HeroSection';
 
 const FooterSocial = ({ className, ...props }) => {
   const classes = classNames('footer-social', className);
