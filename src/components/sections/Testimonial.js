@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
+import { testimonials } from '../../data/HeroSection/HeroSection';
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -41,8 +42,7 @@ const Testimonial = ({
 
   const sectionHeader = {
     title: 'Customer testimonials',
-    paragraph:
-      'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.',
+    paragraph: testimonials.mainPara,
   };
 
   return (
@@ -58,16 +58,12 @@ const Testimonial = ({
               <div className='tiles-item-inner'>
                 <div className='testimonial-item-content'>
                   <p className='text-sm mb-0'>
-                    See what our clients have to say about their experience with
-                    us. We're proud to have earned the trust and satisfaction of
-                    so many happy customers, and we're dedicated to delivering
-                    the same level of exceptional service to every client we
-                    work with.
+                    {testimonials.customers[0].review}
                   </p>
                 </div>
                 <div className='testimonial-item-footer text-xs mt-32 mb-0 has-top-divider'>
                   <span className='testimonial-item-name text-color-high'>
-                    Roman Level
+                    {testimonials.customers[0].name}
                   </span>
                   {/* <span className='text-color-low'> / </span> */}
                   {/* <span className='testimonial-item-link'>
@@ -81,15 +77,12 @@ const Testimonial = ({
               <div className='tiles-item-inner'>
                 <div className='testimonial-item-content'>
                   <p className='text-sm mb-0'>
-                    — Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum cillum dolore eu fugiat.
+                    {testimonials.customers[1].review}
                   </p>
                 </div>
                 <div className='testimonial-item-footer text-xs mt-32 mb-0 has-top-divider'>
                   <span className='testimonial-item-name text-color-high'>
-                    Diana Rynzhuk
+                    {testimonials.customers[1].name}
                   </span>
                   {/* <span className='text-color-low'> / </span> */}
                   {/* <span className='testimonial-item-link'>
@@ -106,15 +99,12 @@ const Testimonial = ({
               <div className='tiles-item-inner'>
                 <div className='testimonial-item-content'>
                   <p className='text-sm mb-0'>
-                    — Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum cillum dolore eu fugiat.
+                    {testimonials.customers[2].review}
                   </p>
                 </div>
                 <div className='testimonial-item-footer text-xs mt-32 mb-0 has-top-divider'>
                   <span className='testimonial-item-name text-color-high'>
-                    Ben Stafford
+                    {testimonials.customers[2].name}
                   </span>
                   {/* <span className='text-color-low'> / </span> */}
                   {/* <span className='testimonial-item-link'>

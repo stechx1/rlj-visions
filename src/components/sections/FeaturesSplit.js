@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
+import { services } from '../../data/HeroSection/HeroSection';
 
 const propTypes = {
   ...SectionSplitProps.types,
@@ -65,17 +66,11 @@ const FeaturesSplit = ({
                 data-reveal-container='.split-item'
               >
                 <div className='text-xxs text-color-primary fw-600 tt-u mb-8'>
-                  Preserving Life's Treasures
+                  {services[0].subheading}
                 </div>
-                <h3 className='mt-0 mb-12'>Photography</h3>
+                <h3 className='mt-0 mb-12'>{services[0].heading}</h3>
                 <p className='m-0'>
-                  Unleash the beauty of life's special moments with our
-                  exceptional photography services. Our talented team of
-                  photographers will work with you to create stunning images
-                  that tell your unique story. Whether you're looking for
-                  stunning wedding photography, dynamic portrait sessions, or
-                  creative commercial photography, we have the expertise to
-                  bring your vision to life.
+                  {services[0].para}
                 </p>
               </div>
               <div
@@ -100,16 +95,11 @@ const FeaturesSplit = ({
                 data-reveal-container='.split-item'
               >
                 <div className='text-xxs text-color-primary fw-600 tt-u mb-8'>
-                  Bringing Memories to Life
+                  {services[1].subheading}
                 </div>
-                <h3 className='mt-0 mb-12'>Videography</h3>
+                <h3 className='mt-0 mb-12'>{services[1].heading}</h3>
                 <p className='m-0'>
-                  Bring your memories to life with our professional videography
-                  services. Our experienced videographers will work with you to
-                  capture the essence of your special moments in beautiful,
-                  high-quality video. From intimate love stories to big-scale
-                  corporate events, we are dedicated to delivering the ultimate
-                  video experience that you'll cherish for a lifetime.
+                  {services[1].para}
                 </p>
               </div>
               <div

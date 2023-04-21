@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
+import { useForm, ValidationError } from '@formspree/react';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Input from '../elements/Input';
@@ -25,6 +26,20 @@ const Contact = ({
   pushLeft,
   ...props
 }) => {
+  const [state, handleSubmit] = useForm('xlekabzr');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleClick = () => {
+    handleSubmit();
+    setTimeout(() => {
+      setName('');
+      setEmail('');
+      setMessage('');
+    }, [500]);
+  };
+
   const outerClasses = classNames(
     'testimonial section',
     topOuterDivider && 'has-top-divider',
@@ -49,11 +64,11 @@ const Contact = ({
       display: 'flex',
       flexDirection: 'row',
     },
-    "@media (max-width: 767px)": {
+    '@media (max-width: 767px)': {
       container: {
         flexDirection: 'column',
       },
-    }
+    },
   };
 
   return (
@@ -61,9 +76,7 @@ const Contact = ({
       <div className='container'>
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className='center-content' />
-          <div
-            style={contactStyles.container}
-          >
+          <div style={contactStyles.container}>
             <Image
               src={require('./../../assets/images/studio.jpeg')}
               alt='Features split 01'
@@ -76,33 +89,66 @@ const Contact = ({
                 width: '100%',
               }}
             >
-              <Input
-                type='text'
-                label='Name'
-                // labelHidden
-                // hasIcon='right'
-                placeholder='Your name'
-              ></Input>
-              <Input
-                type='email'
-                label='Email'
-                // labelHidden
-                // hasIcon='right'
-                placeholder='Enter your email address'
-              ></Input>
-              <Input
-                type='textarea'
-                label='Message'
-                rows={5}
-                // labelHidden
-                // hasIcon='right'
-                placeholder='Your message here.'
-              ></Input>
-              <div style={{ marginTop: '20px' }}>
-                <Button tag={'a'} color='primary' wideMobile href='/'>
-                  Submit
-                </Button>
-              </div>
+              <form
+                onSubmit={handleSubmit}
+                action='https://formspree.io/f/xlekbjvq'
+                method='POST'
+              >
+                <Input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  type='text'
+                  label='Name'
+                  id='Name'
+                  name='Name'
+                  // labelHidden
+                  // hasIcon='right'
+                  placeholder='Your name'
+                ></Input>
+                <Input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type='email'
+                  name='email'
+                  label='Email'
+                  id='Email'
+                  // labelHidden
+                  // hasIcon='right'
+                  placeholder='Enter your email address'
+                ></Input>
+                <ValidationError
+                  prefix='Email'
+                  field='email'
+                  errors={state.errors}
+                />
+                <Input
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  type='textarea'
+                  label='Message'
+                  name='message'
+                  id='Message'
+                  rows={5}
+                  // labelHidden
+                  // hasIcon='right'
+                  placeholder='Your message here.'
+                ></Input>
+                <ValidationError
+                  prefix='Message'
+                  field='message'
+                  errors={state.errors}
+                />
+                <div style={{ marginTop: '20px' }}>
+                  <Button
+                    onClick={handleClick}
+                    color='primary'
+                    wideMobile
+                    type='submit'
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

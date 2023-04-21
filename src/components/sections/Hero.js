@@ -5,6 +5,7 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
+import { heroData } from '../../data/HeroSection/HeroSection';
 
 const propTypes = {
   ...SectionProps.types,
@@ -60,16 +61,17 @@ const Hero = ({
               className='mt-0 mb-16 reveal-from-bottom'
               data-reveal-delay='200'
             >
-              I'm an Amateur
-              <span className='text-color-primary'> Photographer</span> And{' '}
-              <span className='text-color-primary'>Videographer</span>
+              {heroData.what}
+              <span className='text-color-primary'> Photographer</span>{' '}
+              {heroData.and}{' '}
+              <span className='text-color-primary'>{heroData.profession2}</span>
             </h1>
             <div className='container-xs'>
               <p
                 className='m-0 mb-32 reveal-from-bottom'
                 data-reveal-delay='400'
               >
-                Inspiring young adults to turn their passions into reality
+                {heroData.para}
               </p>
               <div className='reveal-from-bottom' data-reveal-delay='600'>
                 <ButtonGroup>
@@ -79,7 +81,7 @@ const Hero = ({
                     wideMobile
                     href='https://cruip.com/'
                   >
-                    Get started
+                    {heroData.buttonText}
                   </Button>
                   {/* <Button
                     tag='a'
