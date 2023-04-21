@@ -43,3 +43,9 @@ export const testimonials = {
     },
   ],
 };
+
+export const socials = {
+  instagram: "https://instagram.com/rljvisions",
+  facebook: "https://facebook.com/",
+  twitter: "https://twitter.com/"
+}
