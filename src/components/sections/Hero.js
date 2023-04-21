@@ -66,7 +66,7 @@ const Hero = ({
                     tag='a'
                     color='primary'
                     wideMobile
-                    href='https://cruip.com/'
+                    href='#contact'
                   >
                     {heroData.buttonText}
                   </Button>
